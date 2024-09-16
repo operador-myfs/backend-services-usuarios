@@ -6,14 +6,6 @@ spring:
     name: backend-services-usuarios
   security:
     oauth2:
-      client:
-        registration:
-          cognito:
-            client-id: 73utd6cv1i47b5llu4sdbvcjhm
-            client-secret: rk1q43s299ik8lo9d5uf9gp2n52epvp7ols7mb17pgjclackfot
-            scope: email, openid, phone
-            redirect-uri: "{baseUrl}/login/oauth2/code/cognito"
-            client-name: operador-client
-        provider:
-          cognito:
-            issuer-uri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_oyma2TUk2
+      resourceserver:
+        jwt:
+          issuer-uri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_oyma2TUk2
